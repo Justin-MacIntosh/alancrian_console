@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <body>
+        <div class='container'>
+            <h1>Viewer Home</h1>
+
+            {% for c in chars %}
+                <div class='row'>
+                    <div class='col-6'><a href={% url 'character' c.id %}>{{ c.name }}</a></div>
+                    <div class='col-6'>{{ c.health }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+{% endblock %}
